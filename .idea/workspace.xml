@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f80a075-9e1c-4bf4-86bf-b7a4a96fb755" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CommandScanner.java" afterPath="$PROJECT_DIR$/src/CommandScanner.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MyFavoriteCommandsProcessor.java" afterPath="$PROJECT_DIR$/src/MyFavoriteCommandsProcessor.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,8 +36,8 @@
       <file leaf-file-name="MyFavoriteCommandsProcessor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MyFavoriteCommandsProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="55" column="52" lean-forward="false" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
+            <state relative-caret-position="261">
+              <caret line="60" column="40" lean-forward="false" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -328,12 +327,12 @@
       <workItem from="1524045271234" duration="4065000" />
       <workItem from="1524078906557" duration="23000" />
       <workItem from="1524317792260" duration="7848000" />
-      <workItem from="1524332985881" duration="1849000" />
+      <workItem from="1524332985881" duration="2609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13785000" />
+    <option name="totallyTimeSpent" value="14545000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -587,8 +586,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyFavoriteCommandsProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="55" column="52" lean-forward="false" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
+        <state relative-caret-position="261">
+          <caret line="60" column="40" lean-forward="false" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

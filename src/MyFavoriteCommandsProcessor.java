@@ -53,9 +53,18 @@ public class MyFavoriteCommandsProcessor {
                     }
                     break;
                 case ECHO:
-                    for(int j = 0; j < params.length; j++) {
-                        System.out.print(params[j] + " ");
+                    int amount = Integer.valueOf(params[params.length-1].toString());
+                    StringBuffer str = new StringBuffer();
+
+                    for(int j = 0; j < params.length-1; j++) {
+                        str.append(params[j].toString());
+                        str.append(" ");
                     }
+
+                    for (int i = 0; i < amount; i++) {
+                        System.out.print(str);
+                    }
+
                     System.out.println("");
                     break;
                 default:

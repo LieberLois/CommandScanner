@@ -53,12 +53,10 @@ public class MyFavoriteCommandsProcessor {
                     }
                     break;
                 case ECHO:
-                    for(int i = 0; i < Integer.parseInt((String) params[params.length - 1]); i++) {
-                        for(int j = 0; j < params.length - 1; j++) {
-                            System.out.print(params[j] + " ");
-                        }
-                        System.out.println("");
+                    for(int j = 0; j < params.length; j++) {
+                        System.out.print(params[j] + " ");
                     }
+                    System.out.println("");
                     break;
                 default:
                     break;

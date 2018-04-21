@@ -26,7 +26,12 @@ public class CommandScanner {
                 if (splitCommand.length == 1) {
                     return new Command(info, null);
                 } else {
-                    return new Command(info, new Object[] {splitCommand[1], splitCommand[2]});
+                    Object[] args = new Object[splitCommand.length-1];
+                    for(int i = 1; i < splitCommand.length; i++){
+                        args[i-1] = splitCommand[i];
+                    }
+
+                    return new Command(info, args);
                 }
             }
 

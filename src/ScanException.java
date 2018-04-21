@@ -6,4 +6,9 @@ public class ScanException extends RuntimeException{
     ScanException(){
         super();
     }
+
+    @Override
+    public String toString() {
+        return super.getMessage();
+    }
 }

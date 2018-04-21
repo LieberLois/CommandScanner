@@ -4,7 +4,6 @@ public enum MyFavoriteCommandTypes implements CommandTypeInfo{
     ADDI("addi", "<param1>  <param2>   * simple integer add", int.class, int.class),
     ADDF("addf", "<param1>  <param2>   * simple float add", float.class, float.class),
     ECHO("echo", "<param1>  <param2>   * echos param1 string param2 times", String.class, int.class);
-    ;
 
     private String name;
     private String helpText;
@@ -37,5 +36,14 @@ public enum MyFavoriteCommandTypes implements CommandTypeInfo{
     @Override
     public Class<?>[] getParamTypes() {
         return paramTypes;
+    }
+
+    @Override
+    public String toString() {
+        if(paramTypes == null) {
+            return this.name + this.helpText + "\n";
+        } else {
+            return this.name + " " + this.helpText + " param1 type: " + this.paramTypes[0] + " param2 type: " + this.paramTypes[1] + "\n";
+        }
     }
 }

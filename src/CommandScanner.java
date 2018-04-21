@@ -11,46 +11,30 @@ public class CommandScanner {
         this.inputReader = inputReader;
     }
 
-    public Command next() throws ScanException{
+    public Command next() throws ScanException {
         System.out.println("Enter a Command!");
         String command = readLine();
 
-        if(command == null)
+        if (command == null)
             return null;
 
         String[] splitCommand = command.split(" ");
         String commandName = splitCommand[0].toLowerCase();
 
-
-        switch(commandName){
-            case "help":
-                return new Command(MyFavoriteCommandTypes.HELP, null);
-            case "exit":
-                return new Command(MyFavoriteCommandTypes.EXIT, null);
-            case "addi":
-                try {
-                    int intValue1 = Integer.parseInt(splitCommand[1]);
-                    int intValue2 = Integer.parseInt(splitCommand[2]);
-                    return new Command(MyFavoriteCommandTypes.ADDI, new Object[]{intValue1, intValue2});
-                } catch (NumberFormatException e) {
-                    throw new ScanException("Wrong input, not an Integer value!");
+        for (CommandTypeInfo info : commandTypeInfos) {
+            if(info.getName().toLowerCase().equals(commandName.toLowerCase())){
+                if (splitCommand.length == 1) {
+                    return new Command(info, null);
+                } else {
+                    return new Command(info, new Object[] {splitCommand[1], splitCommand[2]});
                 }
+            }
 
-            case "addf":
-                try {
-                    float floatValue1 = Float.parseFloat(splitCommand[1]);
-                    float floatValue2 = Float.parseFloat(splitCommand[2]);
-                    return new Command(MyFavoriteCommandTypes.ADDF, new Object[]{floatValue1, floatValue2});
-                } catch (NumberFormatException e) {
-                    throw new ScanException("Wrong input, not a numeric value!");
-                }
-
-            case "echo":
-                return new Command(MyFavoriteCommandTypes.ECHO, null);
-            default:
-                throw new ScanException("Unknown Command!");
         }
+
+        throw new ScanException("Command not found!");
     }
+
 
     private String readLine(){
         try {

@@ -21,27 +21,60 @@ public class MyFavoriteCommandsProcessor {
 
 
             MyFavoriteCommandTypes commandType = (MyFavoriteCommandTypes) command.getCommandType();
+            Object[] params = command.getParams();
 
             switch(commandType){
-                case HELP:
-                    outputStream.println("Help");
-                    break;
                 case EXIT:
-                    outputStream.println("Exit");
-                    break;
-                case ADDF:
-                    outputStream.println("Addf");
+                    System.exit(0);
+                case HELP:
+                    System.out.println(help());
                     break;
                 case ADDI:
-                    outputStream.println("Addi");
+                    int totalInt = 0;
+                    try {
+                        for(int i = 0; i < command.getParams().length; i++) {
+                            totalInt += Integer.parseInt((String) params[i]);
+                        }
+                        System.out.println(totalInt);
+                    } catch (NumberFormatException e) {
+                        outputStream.println(e);
+                    }
+
+                    break;
+                case ADDF:
+                    float totalFloat = 0.f;
+                    try {
+                        for(int i = 0; i < params.length; i++) {
+                            totalFloat += Float.parseFloat((String) params[i]);
+                        }
+                        System.out.println(totalFloat);
+                    } catch (NumberFormatException e) {
+                        outputStream.println(e);
+                    }
                     break;
                 case ECHO:
-                    outputStream.println("Echo");
+                    for(int i = 0; i < Integer.parseInt((String) params[params.length - 1]); i++) {
+                        for(int j = 0; j < params.length - 1; j++) {
+                            System.out.print(params[j] + " ");
+                        }
+                        System.out.println("");
+                    }
                     break;
-                default: break;
+                default:
+                    break;
+
             }
         }
 
+    }
+
+    public static String help(){
+        StringBuilder s = new StringBuilder("List of Commands: \n");
+
+        for(CommandTypeInfo e : MyFavoriteCommandTypes.values()){
+            s.append(e.toString());
+        }
+        return s.toString();
     }
 
     public static void main(String[] args) {

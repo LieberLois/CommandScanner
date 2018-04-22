@@ -3,8 +3,8 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 
 public class MyFavoriteCommandsProcessor {
-    static PrintStream outputStream = System.out;
-    static BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
+    private static PrintStream outputStream = System.out;
+    private static BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
 
     public static void process(){
         CommandScanner commandScanner = new CommandScanner(MyFavoriteCommandTypes.values(), inputReader);
@@ -53,10 +53,16 @@ public class MyFavoriteCommandsProcessor {
                     }
                     break;
                 case ECHO:
-                    int amount = Integer.valueOf(params[params.length-1].toString());
+                    int amount;
+
+                    try {
+                        amount = Integer.valueOf(params[params.length-1].toString());
+                    } catch (NumberFormatException e) {
+                        amount = 1;
+                    }
                     StringBuffer str = new StringBuffer();
 
-                    for(int j = 0; j < params.length-1; j++) {
+                    for(int j = 0; j < params.length; j++) {
                         str.append(params[j].toString());
                         str.append(" ");
                     }

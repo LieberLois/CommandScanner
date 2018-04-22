@@ -1,3 +1,5 @@
+package CommandHandler;
+
 public class Command {
     private CommandTypeInfo commandType;
     private Object[] params;

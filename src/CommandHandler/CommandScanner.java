@@ -1,3 +1,5 @@
+package CommandHandler;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 
@@ -12,7 +14,7 @@ public class CommandScanner {
     }
 
     public Command next() throws ScanException {
-        System.out.println("Enter a Command!");
+        System.out.println("Enter a CommandHandler.Command!");
         String command = readLine();
 
         if (command == null)
@@ -37,7 +39,7 @@ public class CommandScanner {
 
         }
 
-        throw new ScanException("Command not found!");
+        throw new ScanException("CommandHandler.Command not found!");
     }
 
 

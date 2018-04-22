@@ -1,3 +1,5 @@
+package CommandHandler;
+
 public interface CommandTypeInfo {
     public String getName();
 

@@ -1,4 +1,9 @@
-public enum MyFavoriteCommandTypes implements CommandTypeInfo{
+package MyFavoriteCommands;
+
+
+import CommandHandler.CommandTypeInfo;
+
+public enum MyFavoriteCommandTypes implements CommandTypeInfo {
     HELP("help", "  * list all commands"),
     EXIT("exit", "  * exit program"),
     ADDI("addi", "<param1>  <param2>   * simple integer add", int.class, int.class),
